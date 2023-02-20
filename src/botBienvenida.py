@@ -30,7 +30,7 @@ def main():
     def create_config_archive():
         template = {
         'prefix': '', 
-        'token': "MTA3MzAzMjk0MTQ1MTYxNjMzOA.GYcwPH.cFFEz3qxgWZJ94YyDb4hfNJxqbefnI7dqUrmxw", 
+        'token': "TU TOKEN AQUI", 
         }
         with open('config.json', 'w') as f:
             json.dump(template, f)
@@ -76,9 +76,9 @@ def main():
         # Condicional para que este comando solo se ejecute en MD
         if isinstance(ctx.channel, discord.channel.DMChannel):
             # Obtenemos nuestro servidor mediante la ID
-            server = bot.get_guild(1066227032687640607)
+            server = bot.get_guild("IDserver")
             # Obtenemos el rol de usuario de nuestro servidor
-            rol = server.get_role(1076328320393805977)
+            rol = server.get_role("IDrol")
             # Obtenemos al usuario de nuestro servidor mediante su id (la cual viene en el contexto) 
             member = server.get_member(ctx.message.author.id)
             # Le asignamos el rol
@@ -91,7 +91,7 @@ def main():
     @bot.event
     async def on_member_join(member):
         # ID del canal de bienvenida
-        welcome_channel = bot.get_channel(1066227033316806718)
+        welcome_channel = bot.get_channel("IDcanal")
         # Usamos la plantilla para crear la respuesta
         welcome_embed = Welcome_Embed(member.name)
         # Enviamos el embed
